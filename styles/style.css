@@ -1,26 +1,23 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  font-family: 'IBM Plex Mono', sans-serif;
+  font-family: 'IBM Plex mono', sans-serif;
   font-weight: 400;
   font-size: 18px;
-  background-color: var(--bg-color);
-  padding: 10px;
-  margin: 0 auto;
-}
-
-.header {
-  position: relative;
   background-image: var(--bg-image__theme);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+.header {
+  position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   align-items: center;
-  padding-bottom: 65px;
-  min-height: 668px;
+  height: 100vh;
+  padding-top: 20px;
 }
 
 .header-rec::after {
@@ -32,18 +29,19 @@
   background-color: var(--accent-color);
   border-radius: 50%;
   box-shadow: 0 0 4px 2px var(--accent-color);
-  top: 20px;
-  right: 20px;
+  top: 18px;
+  right: 19px;
 }
 
 .header-rec::before {
   content: "rec";
+  font-size: 18px;
   font-weight: 400;
   line-height: 25px;
   color: var(--accent-color);
   position: absolute;
   right: 38px;
-  top: 13px;
+  top: 10px;
   text-transform: uppercase;
 }
 
@@ -69,20 +67,30 @@
   right: 10px;
 }
 
+.title {
+  grid-row: 2;
+  line-height: 95px;
+  font-weight: 700px;
+  color: var(--title-color);
+}
+
 .header-title {
   color: var(--title-color);
   text-shadow: var(--title-shadow);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: 700;
+  display: block;
   line-height: 95px;
   padding-bottom: 55px;
-  word-spacing: nowrap;
+  grid-row: 2;
+  padding-top: 40px;
 }
 
 .header__theme-menu {
   justify-self: end;
   align-self: center;
   grid-row: 1;
+  padding-top: 30px;
 }
 
 .header__theme-menu-list {
@@ -104,6 +112,10 @@
   border: 1px solid var(--border-button-color-hover);
 }
 
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
 .header__theme-menu-button:focus-visible{
   border-bottom: 1px solid var(--border-button-color);
 }
@@ -112,15 +124,27 @@
   border: 1px solid var(--border-button-color);
 }
 
+.header-paragraph {
+  align-self: start;
+  grid-row: 3;
+}
+
 .header-text {
   font-weight: 700;
   line-height: 23px;
   padding: 0;
 }
 
+.content {
+  background-color: var(--bg-color);
+  width: 100%;
+  padding: 0 10px;
+}
+
 .cards-list {
   display: grid;
-  gap: 20px
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .title-decor {
@@ -144,8 +168,11 @@
   padding-bottom: 20px;
 }
 
+.wrap {
+  max-width: 300px;
+}
+
 .side-title {
-  margin-bottom: 10px;
   font-weight: 700;
   line-height: 23px;
   font-size: 18px;
@@ -153,7 +180,8 @@
 
 .main-text {
   color: var(--main-text-color);
-  line-height: 23px;
+  line-height: 23.4px;
+  padding-top: 10px;
 }
 
 .main-text:not(:last-of-type) {
@@ -170,14 +198,16 @@
 }
 
 .main-text-link:focus {
-  border: var(--link-border);
+  outline: none;
+}
+
+.main-text-link:focus-visible {
+  outline: var(--link-border);
 }
 
 .regular-side-title {
-  margin-bottom: 10px;
   font-weight: 400;
   line-height: 23px;
-  margin-top: 20px;
   font-size: 18px;
 }
 
@@ -186,6 +216,7 @@
 }
 
 .images {
+  padding-top: 20px;
   display: grid;
   gap: 10px;
 }
@@ -197,6 +228,7 @@
 }
 
 .footer {
+  background-color: var(--bg-color);
   min-height: 667px;
   position: relative;
   display: grid;
@@ -214,17 +246,38 @@
   text-shadow: var(--footer-title-shadow);
 }
 
-@media (min-width: 780px) and (max-width: 1023px) {
-  .page {
-    padding: 20px;
-  }
+@media (min-width: 768px) and (max-width: 1023px) {
   .header__theme-menu {
+    grid-row: 1;
     align-self: end;
+    padding-right: 20px;
   }
   .header-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     padding: 173px 0 0;
     word-spacing: 35px;
+    grid-row: 3;
+    align-self: center;
+    justify-self: start;
+  }
+  .header-rec::before {
+    right: 48px;
+    top: 20px;
+  }
+  .header-rec::after {
+    right: 29px;
+    top: 28px;
+  }
+  .decorated-zone::before{
+    top: 20px;
+    right: 20px;
+  }
+  .decorated-zone::after {
+    left: 20px;
+    bottom: 20px;
+  }
+  .content {
+    padding: 0 20px;
   }
   .section-card {
     padding-bottom: 80px;
@@ -237,7 +290,7 @@
     justify-self: end;
     padding-right: 70px;
     grid-row: 4;
-    margin: 160px 0 183px;
+    margin: 160px 20px 183px 0;
   }
   .images {
     grid-template-rows: repeat(3, auto);
@@ -264,22 +317,43 @@
   .header__theme-menu {
     align-self: start;
     justify-self: center;
+    padding: 0;
   }
   .header__theme-menu-list {
     flex-direction: row;
-    padding-top: 20px;
   }
   .header-paragraph {
     max-width: 490px;
     justify-self: end;
-    margin: 64px 0 135px;
+    margin: 64px 20px 135px 0;
   }
   .header-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     line-height: 130px;
-    padding-top: 65px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    margin-bottom: 15px;
     word-spacing: 65px;
     justify-self: start;
+  }
+  .header-rec::before {
+    right: 48px;
+    top: 20px;
+  }
+  .header-rec::after {
+    right: 29px;
+    top: 28px;
+  }
+  .decorated-zone::before{
+    top: 20px;
+    right: 20px;
+  }
+  .decorated-zone::after {
+    left: 20px;
+    bottom: 20px;
+  }
+  .content {
+    padding: 0 20px;
   }
   .section-card {
     padding-bottom: 80px;
