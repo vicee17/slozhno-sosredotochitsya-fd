@@ -19,6 +19,7 @@
   --title-text-color: rgba(53, 52, 48, 1);
   --link-border: 1px solid rgba(53, 52, 48, 1);
   --link-shadow: 1px solid rgba(255, 141, 203, 1);
+  --main-title-color: rgba(53, 52, 48, 1);
 }
 
 @media (prefers-color-scheme: light) {

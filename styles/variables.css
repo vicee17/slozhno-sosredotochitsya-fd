@@ -13,4 +13,5 @@
   --bg-image__theme: url(../images/cover-image-dark.png);
   --link-border: 1px solid rgba(241, 178, 206, 1);
   --link-shadow: 1px 1px rgba(255, 0, 112, 1);
+  --main-title-color: rgba(255, 0, 112, 1);
 }
