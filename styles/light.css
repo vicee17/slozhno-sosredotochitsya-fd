@@ -14,7 +14,6 @@
   --border-button-color: rgba(53, 52, 48, 1);
   --border-corner-color: rgba(53, 52, 48, 1);
   --border-button-color-hover: rgba(50, 49, 45, 0.4);
-  --bg-color: rgba(255, 241, 247, 1);
   --bg-image__theme: url(../images/cover-image-light.png);
   --title-text-color: rgba(53, 52, 48, 1);
   --link-border: 1px solid rgba(53, 52, 48, 1);
@@ -33,7 +32,6 @@
     --border-button-color: rgba(53, 52, 48, 1);
     --border-corner-color: rgba(53, 52, 48, 1);
     --border-button-color-hover: rgba(50, 49, 45, 0.4);
-    --bg-color: rgba(255, 241, 247, 1);
     --bg-image__theme: url(../images/cover-image-light.png);
     --title-text-color: rgba(53, 52, 48, 1);
     --link-border: 1px solid rgba(53, 52, 48, 1);
