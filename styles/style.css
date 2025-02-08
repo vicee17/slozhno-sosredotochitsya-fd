@@ -4,12 +4,12 @@
   font-family: 'IBM Plex mono', sans-serif;
   font-weight: 400;
   font-size: 18px;
-  background-color: var(--bg-color);
   background-image: var(--bg-image__theme);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  background-color: var(--bg-color);
 }
 
 .header {
